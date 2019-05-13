@@ -3,7 +3,7 @@ import React from "react";
 
 const NavBar = props => {
   return (
-    <nav>
+    <nav id="navBar">
     BREWERY APP
     </nav>
   )
