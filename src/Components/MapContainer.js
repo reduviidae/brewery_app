@@ -5,8 +5,8 @@ import { Map, GoogleApiWrapper } from "google-maps-react";
 const envKey = process.env.REACT_APP_MAP_KEY;
 
 const style: any = {
-  height: '20%',
-  width: '20%'
+  height: '30%',
+  width: '40%'
 }
 
 const MapContainer = props => {

@@ -1,10 +1,13 @@
 // packages
 import React from "react";
 
+// css
+import "../style/navbar.scss";
+
 const NavBar = props => {
   return (
     <nav id="navBar">
-    BREWERY APP
+      <h1 id="brand">Brewery App</h1>
     </nav>
   )
 }
