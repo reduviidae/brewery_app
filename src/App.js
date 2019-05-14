@@ -1,20 +1,22 @@
 // packages
-import React from 'react';
+import React from "react";
 
 // css
-import './App.scss';
+import "./App.scss";
 
 // components
 import NavBar from "./Components/NavBar";
 import MapContainer from "./Components/MapContainer";
-import BreweryList from "./Components/BreweryList"
+import BreweryList from "./Components/BreweryList";
 
 function App() {
   return (
     <div>
-    <NavBar />
-    <MapContainer />
-    <BreweryList />
+      <NavBar />
+      <div id="grid">
+        <MapContainer />
+        <BreweryList />
+      </div>
     </div>
   );
 }
