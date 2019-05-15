@@ -9,10 +9,6 @@ import "../style/map.scss";
 const envKey = process.env.REACT_APP_MAP_KEY;
 
 class MapContainer extends Component {
-  componentWillReceiveProps(nextProps){
-    console.log(this.props.selectedPlace);
-    console.log(this.props.activeMarker);
-  }
 
   render() {
     const markers = this.props.breweries.map(b => {
@@ -21,7 +17,7 @@ class MapContainer extends Component {
           key={b.id}
           onClick={this.props.selectMarker}
           title={b.name}
-          type={b.type}
+          brewery_type={b.brewery_type}
           street={b.street}
           state={b.state}
           postal_code={b.postal_code}
@@ -34,7 +30,7 @@ class MapContainer extends Component {
       <div id="map">
         <Map
           google={this.props.google}
-          zoom={5}
+          zoom={6}
           initialCenter={{
             lat: 40.64642,
             lng: -73.95999
@@ -45,9 +41,10 @@ class MapContainer extends Component {
             marker={this.props.activeMarker}
             visible={this.props.infoWindowVisible}>
             <div id="infoWindow">
-              <h1>{this.props.selectedPlace && this.props.selectedPlace.title}</h1>
-              <h2>{this.props.selectedPlace.type}</h2>
+              <h2>{this.props.selectedPlace && this.props.selectedPlace.title}</h2>
+              <h4>{`brewery type: ${this.props.selectedPlace.brewery_type}`}</h4>
               <p>{`${this.props.selectedPlace.street}, ${this.props.selectedPlace.state} ${this.props.selectedPlace.postal_code}`}</p>
+              <a href={this.props.selectedPlace.website_url}>visit website</a>
             </div>
             </InfoWindow>
         </Map>
