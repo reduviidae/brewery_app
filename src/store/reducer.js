@@ -1,4 +1,7 @@
 const initialState = {
+  activeMarker: {},
+  selectedPlace: {},
+  infoWindowVisible: false,
   breweries: []
 }
 
@@ -8,6 +11,13 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       breweries: action.payload
+    }
+    case 'SELECT_MARKER':
+    return {
+      ...state,
+      activeMarker: action.marker,
+      selectedPlace: action.props,
+      infoWindowVisible: true
     }
     default:
     return state
