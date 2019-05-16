@@ -41,10 +41,7 @@ class MapContainer extends Component {
             marker={this.props.activeMarker}
             visible={this.props.infoWindowVisible}>
             <div id="infoWindow">
-              <h2>{this.props.selectedPlace && this.props.selectedPlace.title}</h2>
-              <h4>{`brewery type: ${this.props.selectedPlace.brewery_type}`}</h4>
-              <p>{`${this.props.selectedPlace.street}, ${this.props.selectedPlace.state} ${this.props.selectedPlace.postal_code}`}</p>
-              <a href={this.props.selectedPlace.website_url}>visit website</a>
+              <h4>{this.props.selectedPlace && this.props.selectedPlace.title}</h4>
             </div>
             </InfoWindow>
         </Map>

@@ -1,5 +1,6 @@
 // packages
 import React from "react";
+import Container from "react-bootstrap/Container";
 
 // css
 import "./App.scss";
@@ -11,13 +12,13 @@ import BreweryList from "./Components/BreweryList";
 
 function App() {
   return (
-    <div>
+    <Container>
       <NavBar />
-      <div id="grid">
+      <div>
         <MapContainer />
         <BreweryList />
       </div>
-    </div>
+    </Container>
   );
 }
 
