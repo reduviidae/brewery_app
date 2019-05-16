@@ -13,7 +13,7 @@ class BreweryList extends Component {
 
   fetchBreweries() {
     fetch(
-      `https://api.openbrewerydb.org/breweries?by_state=new_york&page=1&per_page=50`,
+      `https://api.openbrewerydb.org/breweries?page=1&per_page=50`,
       {
         method: `GET`,
         headers: {

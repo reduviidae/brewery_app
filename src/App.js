@@ -14,10 +14,10 @@ function App() {
   return (
     <Container>
       <NavBar />
-      <div>
+      <Container id="container">
         <MapContainer />
         <BreweryList />
-      </div>
+      </Container>
     </Container>
   );
 }

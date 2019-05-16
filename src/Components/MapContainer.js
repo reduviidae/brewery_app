@@ -2,6 +2,7 @@
 import React, { Component } from "react";
 import { Map, Marker, InfoWindow, GoogleApiWrapper } from "google-maps-react";
 import { connect } from "react-redux";
+import Container from "react-bootstrap/Container";
 
 // css
 import "../style/map.scss";
@@ -11,6 +12,8 @@ const envKey = process.env.REACT_APP_MAP_KEY;
 class MapContainer extends Component {
 
   render() {
+    let startLng = this.props.breweries[0] ? this.props.breweries[0].longitude : -86.774322;
+    let startLat = this.props.breweries[0] ? this.props.breweries[0].latitude : 33.524521;
     const markers = this.props.breweries.map(b => {
       return (
         <Marker
@@ -27,13 +30,13 @@ class MapContainer extends Component {
       );
     });
     return (
-      <div id="map">
+      <Container id="map">
         <Map
           google={this.props.google}
           zoom={6}
           initialCenter={{
-            lat: 40.64642,
-            lng: -73.95999
+            lat: startLat,
+            lng: startLng
           }}
         >
           {markers}
@@ -45,7 +48,7 @@ class MapContainer extends Component {
             </div>
             </InfoWindow>
         </Map>
-      </div>
+      </Container>
     );
   }
 }
