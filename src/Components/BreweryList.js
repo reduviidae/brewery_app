@@ -43,7 +43,6 @@ class BreweryList extends Component {
         </Card.Body>
       </Card>
     );
-    console.log(brewery);
     return <div id="brewery">{brewery}</div>
   }
 }
