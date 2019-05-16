@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
 
 // css
 import "../style/breweries.scss";
@@ -38,6 +39,7 @@ class BreweryList extends Component {
               {this.props.selectedPlace.street},{" "} {this.props.selectedPlace.state}{" "} {this.props.selectedPlace.postal_code}
             </p>
           </Card.Text>
+          <Button id="linkBtn" href={this.props.selectedPlace.website_url}>visit website</Button>
         </Card.Body>
       </Card>
     );
