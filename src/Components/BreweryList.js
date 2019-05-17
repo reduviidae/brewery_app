@@ -36,7 +36,9 @@ class BreweryList extends Component {
             <h2>{this.props.selectedPlace.title}</h2>
           </Card.Title>
           <Card.Text>
-            <h4>{`brewery type: ${this.props.selectedPlace.brewery_type}`}</h4>
+            <h4>{`brewery type: ${this.props.selectedPlace.brewery_type}`}
+            </h4>
+            <p>{this.props.selectedPlace.phone}</p>
             <p>
               {this.props.selectedPlace.street},{" "}
               {this.props.selectedPlace.state}{" "}
