@@ -14,7 +14,7 @@ function App() {
   return (
     <Container>
       <NavBar />
-      <Container id="container">
+      <Container>
         <MapContainer />
         <BreweryList />
       </Container>

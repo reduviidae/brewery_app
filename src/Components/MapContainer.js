@@ -12,6 +12,7 @@ const envKey = process.env.REACT_APP_MAP_KEY;
 class MapContainer extends Component {
 
   render() {
+    console.log(this.props);
     let startLng = this.props.breweries[0] ? this.props.breweries[0].longitude : -86.774322;
     let startLat = this.props.breweries[0] ? this.props.breweries[0].latitude : 33.524521;
     const markers = this.props.breweries.map(b => {

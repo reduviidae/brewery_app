@@ -13,7 +13,7 @@ class BreweryList extends Component {
 
   fetchBreweries() {
     fetch(
-      `https://api.openbrewerydb.org/breweries?page=1&per_page=50`,
+      `https://wilcook-brewery-api.herokuapp.com/breweries`,
       {
         method: `GET`,
         headers: {
@@ -27,7 +27,9 @@ class BreweryList extends Component {
   }
 
   render() {
-    let brewery = !this.props.selectedPlace.title ? <div>Select a brewery</div> : (
+    let brewery = !this.props.selectedPlace.title ? (
+      <div>Select a brewery</div>
+    ) : (
       <Card>
         <Card.Body>
           <Card.Title>
@@ -36,20 +38,25 @@ class BreweryList extends Component {
           <Card.Text>
             <h4>{`brewery type: ${this.props.selectedPlace.brewery_type}`}</h4>
             <p>
-              {this.props.selectedPlace.street},{" "} {this.props.selectedPlace.state}{" "} {this.props.selectedPlace.postal_code}
+              {this.props.selectedPlace.street},{" "}
+              {this.props.selectedPlace.state}{" "}
+              {this.props.selectedPlace.postal_code}
             </p>
           </Card.Text>
-          <Button id="linkBtn" href={this.props.selectedPlace.website_url}>visit website</Button>
+          <Button className="btn" href={this.props.selectedPlace.website_url}>
+            visit website
+          </Button>
         </Card.Body>
       </Card>
     );
-    return <div id="brewery">{brewery}</div>
+    return <div id="brewery">{brewery}</div>;
   }
 }
 
 const mapStateToProps = state => {
   return {
-    selectedPlace: state.selectedPlace
+    selectedPlace: state.selectedPlace,
+    page: state.page
   };
 };
 
